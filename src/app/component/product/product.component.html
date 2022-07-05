@@ -1,0 +1,22 @@
+<h4 class="page-header">Products</h4>
+
+<!-- <div *ngIf="addedProduct" class="alert alert-success">
+    {{addedProduct}} added to cart!
+</div> -->
+
+<div>
+    <ul class="list-group">
+        <li *ngFor="let product of products" class="list-group-item">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-primary" type="button" (click)="addToCart(product)">
+                    <i class="bi bi-plus-lg"></i>
+                    Add To Cart
+                </button>
+            </div>
+            <h5><strong>{{product.name}}</strong></h5>
+            <p>{{product.quantityPerUnit}}</p>
+            <h6>{{product.unitPrice}}</h6>
+            <span class="badge badge-primary">Add Favorites</span>
+        </li>
+    </ul>
+</div>
