@@ -1,6 +1,4 @@
 <h4 class="page-header">Categories</h4>
 <div class="list-group">
-    <a class="list-group-item">Kategori1</a>
-    <a class="list-group-item">Kategori2</a>
-    <a class="list-group-item">Kategori3</a>
+    <a class="list-group-item" (click)="onSelect(category)" routerLinkActive="active" *ngFor="let category of categories">{{category.name}}</a>
 </div>

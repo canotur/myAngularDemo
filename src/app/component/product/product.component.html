@@ -1,9 +1,14 @@
 <h4 class="page-header">Products</h4>
 
-<!-- <div *ngIf="addedProduct" class="alert alert-success">
-    {{addedProduct}} added to cart!
-</div> -->
-
+<div *ngIf="addedProduct; else cartEmpty" class="alert alert-success">
+    <div>{{addedProduct.name}} added to cart! </div>
+</div>
+<div>
+    <ng-template #cartEmpty>Sepet Boş</ng-template>
+</div>
+<div>
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+</div>
 <div>
     <ul class="list-group">
         <li *ngFor="let product of products" class="list-group-item">
@@ -13,9 +18,9 @@
                     Add To Cart
                 </button>
             </div>
-            <h5><strong>{{product.name}}</strong></h5>
+            <h5><strong>{{product.name| uppercase}}</strong></h5>
             <p>{{product.quantityPerUnit}}</p>
-            <h6>{{product.unitPrice}}</h6>
+            <h6>{{product.unitPrice|currency:'USD':true}}</h6>
             <span class="badge badge-primary">Add Favorites</span>
         </li>
     </ul>
